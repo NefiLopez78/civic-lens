@@ -123,13 +123,13 @@ nav ul{
 nav ul li{
   list-style: none;
   background-color: var(--news-flash);
-  color: var(--watchdog-white);
   padding: 10px 20px;
   margin: 10px 15px;
 }
 
 nav ul li a {
   text-decoration: none;
+  color: var(--watchdog-white);
 }
 
 /* ///ADD/// Global Layout Styles */
@@ -138,6 +138,13 @@ html{
 }
 
 /* ///ADD/// Global Text Styles */
+h1, h2, h3{
+  font-family: var(--font-heading);
+}
+
+p{
+  font-family: var(--font-body);
+}
 
 
 /* ///ADD/// medium styles 620px */
