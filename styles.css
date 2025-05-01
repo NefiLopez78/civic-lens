@@ -260,7 +260,6 @@ main .tagline{
   padding: 1rem;
   margin: .5rem 0;
   box-shadow: var(--shadow);
-  color: var(--truth-text);
   transition: transform 0.3s ease;
 }
 
@@ -279,15 +278,18 @@ form{
 }
 
 form input, label{
-  display: flex;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 fieldset{
   border: 1px solid var(--blue-bulletin);
   padding: .5rem;
   margin: 1rem 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+
 }
 
 #submit{
@@ -394,11 +396,6 @@ small{
     grid-column: 1/-1;
   }
 
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
   
 }
 
@@ -439,7 +436,7 @@ small{
     max-width: 1024px;
     margin: auto;
   }
-  
+
   
 }
 
@@ -450,9 +447,35 @@ small{
 }
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark){
+  body{
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+}
+
+@media (perfers-color-scheme: light){
+  body{
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .featured:hover {
+    transform: none;
+  }
+  .breaking-news:hover{
+    transform: none;
+  }
+}
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  .mobile-nav:has(#menu-toggle:checked) .menu-button {
+    background-color: var(--blue-bulletin);
+    border: 3px solid var(--news-flash);
+  }
 }
